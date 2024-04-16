@@ -82,7 +82,7 @@ define(['./workbox-f4a68738'], (function (workbox) { 'use strict';
     "revision": "3ca0b8505b4bec776b69afdba2768812"
   }, {
     "url": "index.html",
-    "revision": "0.g30s9o20v9g"
+    "revision": "0.hmr024s6duo"
   }], {});
   workbox.cleanupOutdatedCaches();
   workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("index.html"), {
@@ -91,7 +91,7 @@ define(['./workbox-f4a68738'], (function (workbox) { 'use strict';
   workbox.registerRoute(({
     url
   }) => {
-    return "https://pokeapi.co/api/v2/region";
+    return "https://ballapi.co/api/v2/region";
   }, new workbox.CacheFirst({
     "cacheName": "api-cache",
     plugins: [new workbox.CacheableResponsePlugin({
