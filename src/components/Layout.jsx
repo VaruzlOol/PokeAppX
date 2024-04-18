@@ -8,11 +8,11 @@ import Footer from './structure/Footer.jsx';
 import AppProvider from '../app/context/AppContext.jsx';
 
 export default function Layout(){
-  return(
+  return (
     <>
       <AppProvider>
         <div className = 'app divide-y'>
-          <Header>
+          <Header className = { 'bg-white dark:bg-black max-2xl:xl:lg:sticky sm:md:absolute' }>
             <Nav />
           </Header>
           <Main>
