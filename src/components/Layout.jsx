@@ -12,7 +12,7 @@ export default function Layout(){
     <>
       <AppProvider>
         <div className = 'app divide-y'>
-          <Header className = { 'bg-white dark:bg-black max-2xl:xl:lg:sticky sm:md:absolute' }>
+          <Header className = { '' }>
             <Nav />
           </Header>
           <Main>
