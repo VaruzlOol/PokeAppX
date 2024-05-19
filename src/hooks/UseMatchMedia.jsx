@@ -67,20 +67,4 @@ class UseMatchMedia {
     }
 }
 
-/*
-function UseMatchMedia(mediaQuery){
-    if (!window.matchMedia) return;
-    return window.matchMedia(mediaQuery).matches;
-}
-
-function UseMatchMedia(mediaQuery){
-    if (!window.matchMedia) return;
-    return window.matchMedia(mediaQuery);
-}
-
-export function UseMatchMediaList(mediaQuery){
-    return window?.matchMedia(mediaQuery).media;
-}
-*/
-
 export default UseMatchMedia;

@@ -1,13 +1,12 @@
-import React, { useCallback, useState, useMemo } from "react";
+import React, { createContext, useCallback, useState, useMemo } from "react";
 
-export const AppContext = React.createContext({});
+const AppContext = createContext({});
+const value = 'VALUE FROM APP CONTEXT';
 
-export default function AppProvider({ children }){
-    const [theme, setTheme] = useState('light');
-
+function AppProvider({ children }){
     const contextValue = useMemo(() => ({
-        theme
-    }) , [theme]);
+        value
+    }) , [value]);
 
     return(
         <AppContext.Provider value = { contextValue }>
@@ -15,3 +14,6 @@ export default function AppProvider({ children }){
         </AppContext.Provider>
     );
 }
+
+export default AppProvider;
+export { AppContext };

@@ -6,14 +6,18 @@ import UseLightMode from "../hooks/UseLightMode.jsx";
 
 export default function LightModeToggle() {
     const [colorTheme, setTheme] = UseLightMode();
+    const [currentTheme, setCurrentTheme] = new UseLightMode();
     const [LightSide, setLightSide] = useState(colorTheme === "light" ? true : false);
+
+    console.log(`colorTheme: ${ colorTheme }`);
 
     const toggleLightMode = (checked) => {
         setTheme(colorTheme);
+        setCurrentTheme(currentTheme);
         setLightSide(checked);
     };
 
-
+    /*
     localforage.setDriver([
         localforage.INDEXEDDB,
         localforage.WEBSQL,
@@ -39,7 +43,7 @@ export default function LightModeToggle() {
         });
       });
       
-
+    */
     return (
         <>
             <DarkModeToggle

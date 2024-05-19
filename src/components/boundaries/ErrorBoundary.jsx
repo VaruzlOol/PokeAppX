@@ -57,6 +57,8 @@ export const ErrorFallbackRoot = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  console.log(error?.message);
+
   return (
     <>
       <section>

@@ -5,7 +5,7 @@ import Home from '../pages/Home/Home.jsx';
 import Pokes from '../pages/Pokes/Pokes.jsx';
 import Error from '../pages/Error/Error.jsx';
 import Layout from "../components/Layout.jsx";
-import ErrorBoundary, { ErrorBoundaries } from "../components/ErrorBoundary.jsx";
+import ErrorBoundary, { ErrorBoundaries } from "../../components/ErrorBoundary.jsx";
 
 export const routes = (
   [
