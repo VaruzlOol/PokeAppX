@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useWindowSize } from '../hooks/UseWindowSize.jsx';
-import { useThemeSystem } from '../hooks/UseThemeSystem.jsx';
-import UseLightMode from '../hooks/UseLightMode.jsx';
+import useThemeSystem from '../hooks/UseThemeSystem.jsx';
+import UseLightMode, { UseLightMode2 } from '../hooks/UseLightMode.jsx';
 import LightModeToggle from './LightModeToggle.jsx';
 
 
@@ -28,14 +28,13 @@ function ThemeSystem(){
 
 function ThemeUser(){
     const [colorTheme, setTheme] = UseLightMode();
-
-    useEffect(() => {
-        //console.error(colorTheme)
-    }, [colorTheme]);
+    const [mode, setMode] = UseLightMode2();
 
     return (
         <div className = ''>
-            <span>ThemeUser.themeUser: { colorTheme }</span>
+            <span>ThemeUser.colorTheme: { colorTheme }</span>
+            <br />
+            <span>ThemeUser.mode: { mode }</span>
         </div>
     )
 }

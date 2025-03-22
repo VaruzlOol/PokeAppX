@@ -1,20 +1,19 @@
 import { useState } from "react";
 import localforage from "localforage";
 import DarkModeToggle from "react-dark-mode-toggle";
-import UseLightMode from "../hooks/UseLightMode.jsx";
+import UseLightMode, { UseLightMode2 } from "../hooks/UseLightMode.jsx";
  
 
 export default function LightModeToggle() {
-    const [colorTheme, setTheme] = UseLightMode();
-    const [currentTheme, setCurrentTheme] = new UseLightMode();
-    const [LightSide, setLightSide] = useState(colorTheme === "light" ? true : false);
+    const [colorTheme, setTheme] = UseLightMode2();
+    const [LightSide, setLightSide] = useState(colorTheme === "dark" ? true : false);
 
     console.log(`colorTheme: ${ colorTheme }`);
+    console.log(`LightSide: ${ LightSide }`);
 
     const toggleLightMode = (checked) => {
-        setTheme(colorTheme);
-        setCurrentTheme(currentTheme);
-        setLightSide(checked);
+      setLightSide(checked);
+      setTheme(checked ? 'dark' : 'light');  
     };
 
     /*

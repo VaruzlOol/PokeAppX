@@ -27,7 +27,7 @@ function Layout(){
   UseWindowTitleRoot();
   return (
     <>
-        <div className = 'app divide-y'>
+        <div className = 'app divide-y bg-white dark:bg-slate-800'>
           <Header className = { '' }>
             <Nav />
           </Header>

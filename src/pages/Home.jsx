@@ -25,7 +25,7 @@ const customOptions = {
     return (
       <>
       <div className='container'>
-        <h1 className='text-3xl font-bold underline'>Vite + React</h1>
+        <h1 className='text-slate-900 dark:text-white mt-5 text-base font-medium tracking-tight underline'>Vite + React</h1>
         <div className='card'>
           <button onClick={() => setCount((count) => count + 1)}>
             count is {count}
@@ -33,7 +33,7 @@ const customOptions = {
           <p>
             Edit <code>src/App.jsx</code> and save to test HMR
           </p>
-          <p>
+          <p className='text-slate-500 dark:text-slate-400 mt-2 text-sm'>
             {poke}
           </p>
         </div>

@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react';
 
 import RoutesLoader from '../components/loaders/RoutesLoader.jsx';
+import PokeBallLoader from '../components/loaders/pokeBall/PokeBallLoader.jsx';
 import ErrorsRoute from '../components/boundaries/ErrorRoute.jsx';
 
 // import Layout from '../components/structure/Layout.jsx';
@@ -9,6 +10,7 @@ import ErrorsRoute from '../components/boundaries/ErrorRoute.jsx';
 // import Pokemons from '../pages/Pokemons.jsx';
 // import Pokedex from '../pages/Pokedex.jsx';
 // import Information from '../pages/Information.jsx';
+// import Status from '../pages/Status.jsx';
 
 const Layout = lazy(() => import('../components/structure/Layout.jsx'));
 const Home = lazy(() => import('../pages/Home.jsx'));
@@ -16,13 +18,14 @@ const Error = lazy(() => import('../pages/Error.jsx'));
 const Pokemons = lazy(() => import('../pages/Pokemons.jsx'));
 const Pokedex = lazy(() => import('../pages/Pokedex.jsx'));
 const Information = lazy(() => import('../pages/Information.jsx'));
+const Status = lazy(() => import('../pages/Status.jsx'));
 
 const RoutesApp = (isRenderElements) => { 
 
   const routesApp = 
   [
     {
-      element: <Suspense fallback = {<RoutesLoader />}><Layout /></Suspense>,
+      element: <Suspense fallback = {<PokeBallLoader />}><Layout /></Suspense>,
       //loader: <RoutesLoader />,
       errorElement: <ErrorsRoute />,
       children: [
@@ -56,12 +59,16 @@ const RoutesApp = (isRenderElements) => {
           element: <Pokemons />,
         },
         {
-          path: 'pokedex',
+          path: '/pokedex',
           element: <Pokedex />,
         },
         {
           path: '/information',
           element: <Information />
+        },
+        {
+          path: '/status',
+          element: <Status />
         }
       ]
     },
@@ -116,21 +123,9 @@ const RoutesAppNav = (routes) => {
   }
 
   mapChildren(routesApp);
-  expensiveCalculation(1)
+
   return availableRoutes;
 }
 
-const expensiveCalculation = (num) => {
-  console.warn("Calculating...");
-  for (let i = 0; i < 1000000000; i++) {
-    for (let i = 0; i < 1; i++) {
-      num += 1;
-    }
-    num += 1;
-  }
-  console.warn("End calculating. " + num);
-  return num;
-};
-
 export default RoutesApp;
-export { RoutesAppNav, expensiveCalculation };
+export { RoutesAppNav };

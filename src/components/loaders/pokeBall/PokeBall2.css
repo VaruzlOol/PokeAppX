@@ -1,0 +1,120 @@
+:root{
+    --time_out: 2s;
+}
+
+#poke_ball{
+    width: 50%;
+    height: 50%;
+    border: 5px solid black;
+    animation: pokeBall 2s 1.5s;
+    animation-fill-mode: forwards;
+}
+
+#form{
+    transform: translate(18%, 18%)
+}
+
+#focus{
+    scale: 5;
+    transform: translate(-18%, -18%)
+}
+
+#center_black{
+    /* animation: hiddenToVisible 2s normal backwards, opacity 0.5s linear; */
+
+}
+
+#center_white{
+    animation: hiddenToVisible 3s, opacity 0.5s linear;
+}
+
+#red{
+    animation: redA 1s normal forwards, opacity 0.5s linear;
+}
+
+#white{
+    animation: whiteA 1s normal, opacity 0.5s linear;
+}
+
+#background{
+    animation: hiddenToVisible 4s normal, opacity 0.5s linear;
+}
+
+#line_center{
+    visibility: hidden;
+    animation: hiddenToVisible 2s 1.5s normal both, opacity 0.5s linear;
+}
+
+.hidden_to_visible{
+    animation: hiddenToVisible 2s normal backwards, opacity 0.5s linear;
+}
+
+.spin-rotate{
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    transform-style: revert-layer;
+    animation: spinRotate 2.5s 0s infinite, opacity 0.5s linear;
+}
+
+@keyframes pokeBall {
+    from {
+        opacity: 100%;
+    }
+
+    25%{opacity: 90%;}
+    50%{opacity: 95%;}
+
+    to{
+        filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+    }
+}
+
+@keyframes hiddenToVisible {
+    from {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    to {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes redA {
+    from {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-49%);
+    }
+
+    to {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0%);
+        filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+    }
+}
+
+@keyframes whiteA {
+    from {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(49%);
+    }
+
+    to {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes spinRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
